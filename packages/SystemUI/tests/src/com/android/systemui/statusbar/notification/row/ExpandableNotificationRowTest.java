@@ -23,6 +23,8 @@ import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
 import static com.android.systemui.statusbar.NotificationEntryHelper.modifyRanking;
 import static com.android.systemui.statusbar.NotificationEntryHelper.modifySbn;
 import static com.android.systemui.statusbar.notification.row.NotificationRowContentBinder.FLAG_CONTENT_VIEW_ALL;
+import static com.android.systemui.statusbar.notification.row.NotificationTestHelper.PKG;
+import static com.android.systemui.statusbar.notification.row.NotificationTestHelper.USER_HANDLE;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -43,10 +45,15 @@ import static org.mockito.Mockito.when;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
+<<<<<<< HEAD
 import android.graphics.Color;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
+=======
+import android.content.Context;
+import android.os.UserHandle;
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
 import android.testing.AndroidTestingRunner;
 import android.testing.TestableLooper;
 import android.testing.TestableLooper.RunWithLooper;
@@ -59,8 +66,12 @@ import androidx.test.filters.SmallTest;
 import com.android.internal.R;
 import com.android.internal.widget.CachingIconView;
 import com.android.systemui.SysuiTestCase;
+<<<<<<< HEAD
 import com.android.systemui.flags.FakeFeatureFlags;
 import com.android.systemui.flags.Flags;
+=======
+import com.android.systemui.SysuiTestableContext;
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
 import com.android.systemui.plugins.statusbar.NotificationMenuRowPlugin;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.statusbar.notification.AboveShelfChangedListener;
@@ -492,6 +503,7 @@ public class ExpandableNotificationRowTest extends SysuiTestCase {
     }
 
     @Test
+<<<<<<< HEAD
     public void testAddChildNotification() throws Exception {
         ExpandableNotificationRow group = mNotificationTestHelper.createGroup(0);
         ExpandableNotificationRow child = mNotificationTestHelper.createRow();
@@ -717,5 +729,24 @@ public class ExpandableNotificationRowTest extends SysuiTestCase {
         when(mockContainer.getAttachedChildren()).thenReturn(rowList);
         parentRow.setChildrenContainer(mockContainer);
         return mockContainer;
+=======
+    public void imageResolver_sameNotificationUser_usesContext() throws Exception {
+        ExpandableNotificationRow row = mNotificationTestHelper.createRow(PKG,
+                USER_HANDLE.getUid(1234), USER_HANDLE);
+
+        assertThat(row.getImageResolver().getContext()).isSameInstanceAs(mContext);
+    }
+
+    @Test
+    public void imageResolver_differentNotificationUser_createsUserContext() throws Exception {
+        UserHandle user = new UserHandle(33);
+        Context userContext = new SysuiTestableContext(mContext);
+        mContext.prepareCreateContextAsUser(user, userContext);
+
+        ExpandableNotificationRow row = mNotificationTestHelper.createRow(PKG,
+                user.getUid(1234), user);
+
+        assertThat(row.getImageResolver().getContext()).isSameInstanceAs(userContext);
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
     }
 }

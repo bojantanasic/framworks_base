@@ -24,7 +24,10 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.FrameLayout
 import com.android.systemui.SysuiTestCase
+<<<<<<< HEAD:packages/SystemUI/tests/src/com/android/systemui/media/controls/ui/KeyguardMediaControllerTest.kt
 import com.android.systemui.plugins.statusbar.StatusBarStateController
+=======
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.):packages/SystemUI/tests/src/com/android/systemui/media/KeyguardMediaControllerTest.kt
 import com.android.systemui.statusbar.StatusBarState
 import com.android.systemui.statusbar.SysuiStatusBarStateController
 import com.android.systemui.statusbar.notification.stack.MediaContainerView
@@ -56,7 +59,12 @@ class KeyguardMediaControllerTest : SysuiTestCase() {
     @Mock private lateinit var statusBarStateController: SysuiStatusBarStateController
     @Mock private lateinit var configurationController: ConfigurationController
 
+<<<<<<< HEAD:packages/SystemUI/tests/src/com/android/systemui/media/controls/ui/KeyguardMediaControllerTest.kt
     @JvmField @Rule val mockito = MockitoJUnit.rule()
+=======
+    @JvmField @Rule
+    val mockito = MockitoJUnit.rule()
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.):packages/SystemUI/tests/src/com/android/systemui/media/KeyguardMediaControllerTest.kt
 
     private val mediaContainerView: MediaContainerView = MediaContainerView(context, null)
     private val hostView = UniqueObjectHostView(context)
@@ -79,6 +87,7 @@ class KeyguardMediaControllerTest : SysuiTestCase() {
         whenever(statusBarStateController.state).thenReturn(StatusBarState.KEYGUARD)
         whenever(mediaHost.hostView).thenReturn(hostView)
         hostView.layoutParams = FrameLayout.LayoutParams(100, 100)
+<<<<<<< HEAD:packages/SystemUI/tests/src/com/android/systemui/media/controls/ui/KeyguardMediaControllerTest.kt
         testableLooper = TestableLooper.get(this)
         fakeHandler = FakeHandler(testableLooper.looper)
         keyguardMediaController =
@@ -91,6 +100,15 @@ class KeyguardMediaControllerTest : SysuiTestCase() {
                 fakeHandler,
                 configurationController,
             )
+=======
+        keyguardMediaController = KeyguardMediaController(
+            mediaHost,
+            bypassController,
+            statusBarStateController,
+            context,
+            configurationController
+        )
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.):packages/SystemUI/tests/src/com/android/systemui/media/KeyguardMediaControllerTest.kt
         keyguardMediaController.attachSinglePaneContainer(mediaContainerView)
         keyguardMediaController.useSplitShade = false
     }
@@ -118,6 +136,7 @@ class KeyguardMediaControllerTest : SysuiTestCase() {
     }
 
     @Test
+<<<<<<< HEAD:packages/SystemUI/tests/src/com/android/systemui/media/controls/ui/KeyguardMediaControllerTest.kt
     fun testHiddenOnKeyguard_whenMediaOnLockScreenDisabled() {
         settings.putInt(Settings.Secure.MEDIA_CONTROLS_LOCK_SCREEN, 0)
 
@@ -136,6 +155,8 @@ class KeyguardMediaControllerTest : SysuiTestCase() {
     }
 
     @Test
+=======
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.):packages/SystemUI/tests/src/com/android/systemui/media/KeyguardMediaControllerTest.kt
     fun testActivatesSplitShadeContainerInSplitShadeMode() {
         val splitShadeContainer = FrameLayout(context)
         keyguardMediaController.attachSplitShadeContainer(splitShadeContainer)

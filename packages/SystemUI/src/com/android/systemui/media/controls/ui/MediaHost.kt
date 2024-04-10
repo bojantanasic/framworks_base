@@ -198,12 +198,22 @@ constructor(
      * the visibility has changed
      */
     fun updateViewVisibility() {
+<<<<<<< HEAD:packages/SystemUI/src/com/android/systemui/media/controls/ui/MediaHost.kt
         state.visible =
             if (showsOnlyActiveMedia) {
                 mediaDataManager.hasActiveMediaOrRecommendation()
             } else {
                 mediaDataManager.hasAnyMediaOrRecommendation()
             }
+=======
+        state.visible = if (mediaHierarchyManager.isLockedAndHidden()) {
+            false
+        } else if (showsOnlyActiveMedia) {
+            mediaDataManager.hasActiveMediaOrRecommendation()
+        } else {
+            mediaDataManager.hasAnyMediaOrRecommendation()
+        }
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.):packages/SystemUI/src/com/android/systemui/media/MediaHost.kt
         val newVisibility = if (visible) View.VISIBLE else View.GONE
         if (newVisibility != hostView.visibility) {
             hostView.visibility = newVisibility

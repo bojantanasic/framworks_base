@@ -45,6 +45,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.Trace;
+import android.os.UserHandle;
 import android.service.notification.StatusBarNotification;
 import android.util.ArraySet;
 import android.util.AttributeSet;
@@ -1674,10 +1675,13 @@ public class ExpandableNotificationRow extends ActivatableNotificationView
      */
     public ExpandableNotificationRow(Context context, AttributeSet attrs) {
         super(context, attrs);
+<<<<<<< HEAD
         mImageResolver = new NotificationInlineImageResolver(context,
                 new NotificationInlineImageCache());
         float radius = getResources().getDimension(R.dimen.notification_corner_radius_small);
         mSmallRoundness = radius / getMaxRadius();
+=======
+>>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
         initDimens();
     }
 
@@ -1711,6 +1715,8 @@ public class ExpandableNotificationRow extends ActivatableNotificationView
             FeatureFlags featureFlags,
             IStatusBarService statusBarService) {
         mEntry = entry;
+        mImageResolver = new NotificationInlineImageResolver(userContextForEntry(mContext, entry),
+                new NotificationInlineImageCache());
         mAppName = appName;
         if (mMenuRow == null) {
             mMenuRow = new NotificationMenuRow(mContext, peopleNotificationIdentifier);
@@ -1746,6 +1752,14 @@ public class ExpandableNotificationRow extends ActivatableNotificationView
         mNotificationGutsManager = gutsManager;
         mMetricsLogger = metricsLogger;
         mFeatureFlags = featureFlags;
+    }
+
+    private static Context userContextForEntry(Context base, NotificationEntry entry) {
+        if (base.getUserId() == entry.getSbn().getNormalizedUserId()) {
+            return base;
+        }
+        return base.createContextAsUser(
+                UserHandle.of(entry.getSbn().getNormalizedUserId()), /* flags= */ 0);
     }
 
     private void initDimens() {
