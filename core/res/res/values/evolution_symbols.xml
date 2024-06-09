@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
+    <java-symbol type="string" name="config_netflixSpoofModel" />
+
+    <!-- AttestationHooks -->
+    <java-symbol type="array" name="config_certifiedBuildProperties" />
+    <java-symbol type="string" name="config_stockFingerprint" />
+
+    <!-- Device keyhandlers -->
+    <java-symbol type="array" name="config_deviceKeyHandlerLibs" />
+    <java-symbol type="array" name="config_deviceKeyHandlerClasses" />
+
+    <!-- Whether device has physical tri state switch -->
+    <java-symbol type="bool" name="config_hasAlertSlider" />
+
+    <!-- The location of the devices physical tri state switch -->
+    <java-symbol type="integer" name="config_alertSliderLocation" />
+
+    <!-- Whether key handler sends intent when changing slider position -->
+    <java-symbol type="string" name="config_alertSliderIntent" />
+
+    <!-- For dynamic default font styles -->
+    <java-symbol type="string" name="config_bodyFontFamily" />
+
+    <!-- Proximity check on screen on -->
+    <java-symbol type="bool" name="config_proximityCheckOnWake" />
+
+    <!-- Proximity check timeout -->
+    <java-symbol type="integer" name="config_proximityCheckTimeout" />
+
+    <!-- Proximity check on screen on default -->
+    <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
+
+    <!-- Package Manager -->
+    <java-symbol type="array" name="config_deviceDisabledComponents" />
+    <java-symbol type="array" name="config_globallyDisabledComponents" />
+    <java-symbol type="array" name="config_forceEnabledComponents" />
+
+    <!-- Light / Regular style fonts -->
+    <java-symbol type="string" name="config_lightFontFamily" />
+    <java-symbol type="string" name="config_regularFontFamily" />
+
+    <!-- Advanced reboot -->
+    <java-symbol type="string" name="reboot_to_recovery_title" />
+    <java-symbol type="string" name="reboot_to_recovery_message" />
+    <java-symbol type="string" name="reboot_to_bootloader_title" />
+    <java-symbol type="string" name="reboot_to_bootloader_message" />
+    <java-symbol type="string" name="reboot_title" />
+    <java-symbol type="string" name="reboot_message" />
+
+    <!-- Global Actions pref list -->
+    <java-symbol type="array" name="custom_config_globalActionsList" />
+
+    <!-- App error dialog -->
+    <java-symbol type="id" name="aerr_copy" />
+    <java-symbol type="string" name="url_copy_success" />
+    <java-symbol type="string" name="url_copy_failed" />
+
+    <!-- Whether to force enable multi resolution configuration for camera -->
+    <java-symbol type="bool" name="config_forceMultiResolution" />
+
+    <!-- Camera -->
+    <java-symbol type="array" name="config_cameraAuxPackageAllowList" />
+    <java-symbol type="array" name="config_cameraAuxPackageExcludeList" />
+    <java-symbol type="array" name="config_cameraHFRPrivAppList" />
+
+    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+    <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
+
+    <!-- Whether to cancel fingerprint operation if not idle -->
+    <java-symbol type="bool" name="config_fpCancelIfNotIdle" />
+
+    <!-- Whether device supports an alt. ambient display -->
+    <java-symbol type="bool" name="config_alt_ambient_display"/>
+
+    <!-- SystemUI Restart -->
+    <java-symbol type="string" name="systemui_restart_title" />
+    <java-symbol type="string" name="systemui_restart_message" />
+
+    <!-- Whether to allow process with media UID to access CameraServiceProxy -->
+    <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
+
+    <!-- Pocket Lock -->
+    <java-symbol type="layout" name="pocket_lock_view" />
+
+    <!-- Pocket bridge -->
+    <java-symbol type="string" name="config_pocketBridgeSysfsInpocket" />
+    <java-symbol type="bool" name="config_pocketModeSupported" />
+    <java-symbol type="bool" name="config_pocketUseLightSensor" />
+
+    <!-- Pocket Service -->
+    <java-symbol type="string" name="config_pocketJudgeVendorSensorName" />
+    <java-symbol type="string" name="config_pocketJudgeVendorProximitySensorName" />
+
+    <!-- Whether device has dash charging support -->
+    <java-symbol type="bool" name="config_hasDashCharger" />
+    <!-- Path to dash charging status file -->
+    <java-symbol type="string" name="config_DashChargerStatusPath" />
+
+    <!-- Whether device has warp charging support -->
+    <java-symbol type="bool" name="config_hasWarpCharger" />
+    <!-- Paths to warp charging status file -->
+    <java-symbol type="string" name="config_WarpChargerStatusPath" />
+
+    <!-- Whether device has VOOC charging support -->
+    <java-symbol type="bool" name="config_hasVoocCharger" />
+
+    <!-- Whether device has turbo power charging support -->
+    <java-symbol type="bool" name="config_hasTurboPowerCharger" />
+
+    <!-- Whether device has SuperDart charging support -->
+    <java-symbol type="bool" name="config_hasSuperDartCharger" />
+
+    <!-- LiveDisplay -->
+    <java-symbol type="string" name="live_display_title" />
+    <java-symbol type="string" name="live_display_hint" />
+    <java-symbol type="string" name="live_display_auto" />
+    <java-symbol type="string" name="live_display_auto_summary" />
+    <java-symbol type="string" name="live_display_day" />
+    <java-symbol type="string" name="live_display_day_summary" />
+    <java-symbol type="string" name="live_display_night" />
+    <java-symbol type="string" name="live_display_night_summary" />
+    <java-symbol type="string" name="live_display_outdoor" />
+    <java-symbol type="string" name="live_display_outdoor_summary" />
+    <java-symbol type="drawable" name="ic_livedisplay_notif" />
+    <java-symbol type="array" name="live_display_announcement" />
+    <java-symbol type="array" name="live_display_description" />
+    <java-symbol type="array" name="live_display_drawables" />
+    <java-symbol type="array" name="live_display_entries" />
+    <java-symbol type="array" name="live_display_summaries" />
+    <java-symbol type="array" name="live_display_values" />
+    <java-symbol type="integer" name="config_dayColorTemperature" />
+    <java-symbol type="integer" name="config_nightColorTemperature" />
+    <java-symbol type="integer" name="config_outdoorAmbientLux" />
+    <java-symbol type="integer" name="config_outdoorAmbientLuxHysteresis" />
+    <java-symbol type="integer" name="config_defaultLiveDisplayMode" />
+    <java-symbol type="integer" name="config_minColorTemperature" />
+    <java-symbol type="integer" name="config_maxColorTemperature" />
+    <java-symbol type="bool" name="config_enableLiveDisplay" />
+    <java-symbol type="bool" name="config_defaultAutoContrast" />
+    <java-symbol type="bool" name="config_defaultAutoOutdoorMode" />
+    <java-symbol type="bool" name="config_defaultColorEnhancement" />
+    <java-symbol type="bool" name="config_defaultCABC" />
+    <java-symbol type="bool" name="config_filterDisplayModes" />
+    <java-symbol type="array" name="config_displayModeMappings" />
+    <java-symbol type="bool" name="config_defaultAntiFlicker" />
+
+    <!-- LED stuff -->
+    <java-symbol type="bool" name="config_hasNotificationLed" />
+    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+    <java-symbol type="bool" name="config_multiColorBatteryLed" />
+    <java-symbol type="bool" name="config_ledCanPulse" />
+
+    <!-- HW keys binding -->
+    <java-symbol type="anim" name="custom_app_in" />
+    <java-symbol type="anim" name="custom_app_out" />
+    <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
+    <!-- These are system packages exempted from privacy indicator -->
+    <java-symbol type="array" name="config_indicatorExemptedPackageNames" />
+
+    <!-- Cycle through ringer modes -->
+    <java-symbol type="string" name="volume_dialog_ringer_guidance_normal" />
+
+    <!-- Whether to handle audio direction changes between major call states -->
+    <java-symbol type="bool" name="config_handleAudioDirectionChangesBetweenCallStateChanges" />
+
+    <!-- Sensor block -->
+    <java-symbol type="array" name="config_blockPackagesSensorDrain" />
+
+    <!-- Switch USB controller on Asus ROG devices-->
+    <java-symbol type="bool" name="config_switchUsbController" />
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <java-symbol type="string" name="config_oemFastChargerStatusPath" />
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <java-symbol type="string" name="config_oemFastChargerStatusPath2" />
+
+    <!-- Expected value from fast charging status file -->
+    <java-symbol type="string" name="config_oemFastChargerStatusValue" />
+
+    <!-- App lock -->
+    <java-symbol type="string" name="unlock_application" />
+    <java-symbol type="array" name="config_appLockAllowedSystemApps" />
+
+    <!-- Power menu animations -->
+    <java-symbol type="style" name="GlobalActionsAnimation" />
+    <java-symbol type="style" name="GlobalActionsAnimationTop" />
+    <java-symbol type="style" name="GlobalActionsAnimationEnter" />
+    <java-symbol type="style" name="GlobalActionsAnimationTn" />
+    <java-symbol type="style" name="GlobalActionsAnimationTranslucent" />
+    <java-symbol type="style" name="GlobalActionsAnimationXylon" />
+    <java-symbol type="style" name="GlobalActionsAnimationCard" />
+    <java-symbol type="style" name="GlobalActionsAnimationRotate" />
+
+    <!-- The list of vendor package signatures that should also be considered
+         platform signatures, specifically for use on devices with a vendor partition. -->
+    <java-symbol type="array" name="config_vendorPlatformSignatures" />
+
+    <!-- Location indicator -->
+    <java-symbol type="drawable" name="stat_sys_location" />
+
+    <!-- Whether device supports gestures on fingerprint sensor -->
+    <java-symbol type="bool" name="config_supportsGesturesOnFingerprintSensor" />
+
+    <!-- Enable face auth only when swiping security view -->
+    <java-symbol type="bool" name="config_faceAuthOnlyOnSecurityView" />
+
+    <!-- Lock gesture -->
+    <java-symbol type="string" name="gesture_locked_warning" />
+
+    <!-- Button and keyboard backlight -->
+    <java-symbol type="integer" name="config_deviceSupportsButtonBrightnessControl" />
+    <java-symbol type="integer" name="config_deviceSupportsKeyboardBrightnessControl" />
+    <java-symbol type="dimen" name="config_buttonBrightnessSettingDefaultFloat" />
+    <java-symbol type="dimen" name="config_keyboardBrightnessSettingDefaultFloat" />
+
+    <!-- Sleep Mode -->
+    <java-symbol type="drawable" name="ic_sleep" />
+    <java-symbol type="string" name="notification_channel_sleep" />
+    <java-symbol type="string" name="sleep_mode_notification_title" />
+    <java-symbol type="string" name="sleep_mode_notification_content" />
+    <java-symbol type="string" name="sleep_mode_enabled_toast" />
+    <java-symbol type="string" name="sleep_mode_disabled_toast" />
+
+    <!-- For dynamic default font styles -->
+    <java-symbol type="string" name="config_bodyFontFamily" />
+
+    <!-- DC Dimming -->
+    <java-symbol type="string" name="config_deviceDcDimmingSysfsNode" />
+    <java-symbol type="string" name="config_deviceDcDimmingEnableValue" />
+    <java-symbol type="string" name="config_deviceDcDimmingDisableValue" />
+
+    <!-- Enforce DisplayModeDirector to select user preferred resolution -->
+    <java-symbol type="bool" name="config_forceToUseSelectedResolution" />
+
+    <!-- Display color inversion availability -->
+    <java-symbol type="bool" name="config_displayInversionAvailable" />
+
+    <!-- Whether the device supports Smart Pixels -->
+    <java-symbol type="bool" name="config_supportSmartPixels" />
+
+    <!-- Whether device supports in-display fingerprint -->
+    <java-symbol type="bool" name="config_supportsUdfps" />
+
+    <!-- Whether device supports in-display fingerprint when screen is off -->
+    <java-symbol type="bool" name="config_supportsScreenOffUdfps" />
+
+    <!-- InputFilter Class-->
+    <java-symbol type="string" name="config_deviceInputFilterLibs" />
+    <java-symbol type="string" name="config_deviceInputFilterClasses" />
+
+    <!-- Default line spacing multiplier between hours and minutes of the keyguard clock-->
+    <java-symbol type="dimen" format="float" name="keyguard_clock_line_spacing_scale" />
+
+    <!-- Mock Oplus LinearmotorVibratorService -->
+    <java-symbol type="bool" name="config_mockOplusLinearmotorVibratorService" />
+
+    <!-- Whether to enable Lineage Health Service -->
+    <java-symbol type="bool" name="config_lineageHealthSupported" />
+
+    <!-- Parallel space badge -->
+    <java-symbol type="string" name="parallel_space_badge_label" />
+    <java-symbol type="drawable" name="ic_parallel_badge" />
+    <java-symbol type="drawable" name="ic_parallel_icon_badge" />
+
+    <!-- Parallel space badge colors -->
+    <java-symbol type="color" name="parallel_badge_1" />
+    <java-symbol type="color" name="parallel_badge_2" />
+    <java-symbol type="color" name="parallel_badge_3" />
+    <java-symbol type="color" name="parallel_badge_4" />
+    <java-symbol type="color" name="parallel_badge_5" />
+    <java-symbol type="color" name="parallel_badge_6" />
+    <java-symbol type="color" name="parallel_badge_7" />
+    <java-symbol type="color" name="parallel_badge_8" />
+    <java-symbol type="color" name="parallel_badge_9" />
+
+    <!-- Parallel Space -->
+    <java-symbol type="integer" name="config_parallelSpaceMaxCount" />
+    <java-symbol type="array" name="config_parallelSpaceWhitelist" />
+    <java-symbol type="array" name="config_parallelSpaceBlocklist" />
+
+    <!-- More battery styles -->
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathBuddy" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskBuddy" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathBuddy" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathBuddy" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathBuddy" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathLine" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskLine" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathLine" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathLine" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathLine" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathMusku" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskMusku" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathMusku" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathMusku" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathMusku" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathSignal" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskSignal" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathSignal" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathSignal" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathSignal" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathPill" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskPill" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathPill" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathPill" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathPill" />
+    <java-symbol type="string" name="config_batterymeterRLandPerimeterPathStyleA" />
+    <java-symbol type="string" name="config_batterymeterRLandFillMaskStyleA" />
+    <java-symbol type="string" name="config_batterymeterRLandBoltPathStyleA" />
+    <java-symbol type="string" name="config_batterymeterRLandPowersavePathStyleA" />
+    <java-symbol type="string" name="config_batterymeterRLandErrorPerimeterPathStyleA" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathStyleA" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskStyleA" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathStyleA" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathStyleA" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathStyleA" />
+    <java-symbol type="string" name="config_batterymeterRLandPerimeterPathStyleB" />
+    <java-symbol type="string" name="config_batterymeterRLandFillMaskStyleB" />
+    <java-symbol type="string" name="config_batterymeterRLandBoltPathStyleB" />
+    <java-symbol type="string" name="config_batterymeterRLandPowersavePathStyleB" />
+    <java-symbol type="string" name="config_batterymeterRLandErrorPerimeterPathStyleB" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathStyleB" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskStyleB" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathStyleB" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathStyleB" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathStyleB" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathiOS15" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskiOS15" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathiOS15" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathiOS15" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathiOS15" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathiOS16" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskiOS16" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathiOS16" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathiOS16" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathiOS16" />
+    <java-symbol type="string" name="config_batterymeterLandPerimeterPathOrigami" />
+    <java-symbol type="string" name="config_batterymeterLandFillMaskOrigami" />
+    <java-symbol type="string" name="config_batterymeterLandBoltPathOrigami" />
+    <java-symbol type="string" name="config_batterymeterLandPowersavePathOrigami" />
+    <java-symbol type="string" name="config_batterymeterLandErrorPerimeterPathOrigami" />
+
+    <!-- Should we listen for fingerprints when the screen is off?  Devices
+         with a rear-mounted sensor want this, but certain devices have
+         the sensor embedded in the power key and listening all the time
+         causes a poor experience. -->
+    <java-symbol type="bool" name="config_fingerprintWakeAndUnlock" />
+
+    <!-- Boost Framework -->
+    <java-symbol type="bool" name="config_supportsBoostFramework" />
+
+    <!-- Define device configs on boot -->
+    <java-symbol type="array" name="global_device_configs_override" />
+    <java-symbol type="array" name="device_configs_override" />
+
+    <!-- Health interface -->
+    <java-symbol type="bool" name="config_chargingControlEnabled" />
+    <java-symbol type="integer" name="config_defaultChargingControlMode" />
+    <java-symbol type="integer" name="config_defaultChargingControlStartTime" />
+    <java-symbol type="integer" name="config_defaultChargingControlTargetTime" />
+    <java-symbol type="integer" name="config_defaultChargingControlLimit" />
+    <java-symbol type="drawable" name="ic_charging_control" />
+    <java-symbol type="integer" name="config_chargingControlTimeMargin" />
+    <java-symbol type="integer" name="config_chargingControlBatteryRechargeMargin" />
+    <java-symbol type="string" name="charging_control_notification_channel" />
+    <java-symbol type="string" name="charging_control_notification_title" />
+    <java-symbol type="string" name="charging_control_notification_cancel_once" />
+    <java-symbol type="string" name="charging_control_notification_content_limit" />
+    <java-symbol type="string" name="charging_control_notification_content_limit_reached" />
+    <java-symbol type="string" name="charging_control_notification_content_target" />
+    <java-symbol type="string" name="charging_control_notification_content_target_reached" />
+
+    <!-- Whether to use Richtap vibration -->
+    <java-symbol type="bool" name="config_usesRichtapVibration" />
+
+    <!-- Whether Pixel props is enabled -->
+    <java-symbol type="bool" name="config_enablePixelProps" />
+
+    <!-- Spoof GMS as Pixel Tablet -->
+    <java-symbol type="bool" name="config_spoofasTablet" />
+</resources>
