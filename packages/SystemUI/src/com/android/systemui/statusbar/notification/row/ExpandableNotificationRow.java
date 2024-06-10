@@ -1675,13 +1675,6 @@ public class ExpandableNotificationRow extends ActivatableNotificationView
      */
     public ExpandableNotificationRow(Context context, AttributeSet attrs) {
         super(context, attrs);
-<<<<<<< HEAD
-        mImageResolver = new NotificationInlineImageResolver(context,
-                new NotificationInlineImageCache());
-        float radius = getResources().getDimension(R.dimen.notification_corner_radius_small);
-        mSmallRoundness = radius / getMaxRadius();
-=======
->>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
         initDimens();
     }
 

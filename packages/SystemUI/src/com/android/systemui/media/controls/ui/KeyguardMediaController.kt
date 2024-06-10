@@ -201,13 +201,8 @@ constructor(
         visible =
             mediaHost.visible &&
                 !bypassController.bypassEnabled &&
-<<<<<<< HEAD:packages/SystemUI/src/com/android/systemui/media/controls/ui/KeyguardMediaController.kt
-                keyguardOrUserSwitcher &&
-                allowMediaPlayerOnLockScreen &&
-                shouldBeVisibleForSplitShade()
-=======
+
                 keyguardOrUserSwitcher
->>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.):packages/SystemUI/src/com/android/systemui/media/KeyguardMediaController.kt
         if (visible) {
             showMediaPlayer()
         } else {

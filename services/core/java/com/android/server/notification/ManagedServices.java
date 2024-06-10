@@ -1514,12 +1514,8 @@ abstract public class ManagedServices {
     void reregisterService(final ComponentName cn, final int userId) {
         // If rebinding a package that died, ensure it still has permission
         // after the rebind delay
-<<<<<<< HEAD
-        if (isPackageOrComponentAllowed(cn.getPackageName(), userId)
-                || isPackageOrComponentAllowed(cn.flattenToString(), userId)) {
-=======
+
         if (isPackageOrComponentAllowedWithPermission(cn, userId)) {
->>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
             registerService(cn, userId);
         }
     }
@@ -1624,18 +1620,13 @@ abstract public class ManagedServices {
                         unbindService(this, name, userid);
                         if (!mServicesRebinding.contains(servicesBindingTag)) {
                             mServicesRebinding.add(servicesBindingTag);
-<<<<<<< HEAD
-                            mHandler.postDelayed(() ->
-                                    reregisterService(name, userid),
-                                    ON_BINDING_DIED_REBIND_DELAY_MS);
-=======
+
                             mHandler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         reregisterService(name, userid);
                                     }
                                }, ON_BINDING_DIED_REBIND_DELAY_MS);
->>>>>>> fad3e27acceb (Merge cherrypicks of ['googleplex-android-review.googlesource.com/25603480', 'googleplex-android-review.googlesource.com/26230695', 'googleplex-android-review.googlesource.com/26482549', 'googleplex-android-review.googlesource.com/26307234', 'googleplex-android-review.googlesource.com/26389309', 'googleplex-android-review.googlesource.com/26151073', 'googleplex-android-review.googlesource.com/26720245', 'googleplex-android-review.googlesource.com/26739898', 'googleplex-android-review.googlesource.com/26686523', 'googleplex-android-review.googlesource.com/26721087', 'googleplex-android-review.googlesource.com/26801741', 'googleplex-android-review.googlesource.com/26700367', 'googleplex-android-review.googlesource.com/26709088'] into security-aosp-tm-release.)
                         } else {
                             Slog.v(TAG, getCaption() + " not rebinding in user " + userid
                                     + " as a previous rebind attempt was made: " + name);
